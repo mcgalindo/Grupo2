@@ -101,3 +101,32 @@ todosMCG
 Según la mayoría de  criterios, la mejor alternativa para María es la 2, es decir, 
 alquilar la casa rural de Cádiz. El criterio de Wald es el único que recomienda la
 alternativa 3, esto es, la casa rural de Málaga.
+
+#Ejercicio 2 (Maria Caballos Galindo)
+```{r}
+source("teoriadecision_funciones_incertidumbre.R")
+
+tabla1MCG=crea.tablaX(c(-6, -6, -2,
+                      0,  3,  4,
+                      8, -5,  9,
+                      4, -7,  0),numalternativas = 4, numestados = 3)
+tabla1MCG
+
+criterio.Wald(tabla1MCG,T)
+criterio.Optimista(tabla1MCG,T)
+m.opt = criterio.Optimista(tabla1MCG,T)
+names(m.opt$AlternativaOptima)
+criterio.Hurwicz(tabla1MCG,alfa = 0.7)
+dibuja.criterio.Hurwicz(tabla1MCG)
+dibuja.criterio.Hurwicz(tabla1MCG,F)
+dibuja.criterio.Hurwicz_Intervalos(tabla1MCG)
+criterio.Savage(tabla1MCG)
+criterio.Laplace(tabla1MCG)
+criterio.PuntoIdeal(tabla1MCG)
+
+criterio.Todos(tabla1MCG, alfa = 0.4, favorable = T)
+
+
+```
+
+La alternativa más recomendada es la 3, aunque la 2 tampoco es mala opción.
