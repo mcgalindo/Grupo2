@@ -74,3 +74,44 @@ mensualidad el triple
 Decidir cuál es la mejor alternativa según todos los criterios si la chica 
 quiere aprender a bailar de manera efectiva y minimizar sus gastos. 
 
+
+# PROBLEMA 1 (Estefanía Blanco Rodríguez)
+
+Un consumidor quiere hacer la compra semanal pero tiene varias opciones de supermercados
+en su ciudad. Debe considerar los factores que incluyen cada opción y tomar
+la decisión de en que supermercado le saldría más rentable en su conjunto
+de hacer la compra, teniendo en cuenta que quiere tener el menor costo posible.
+
+En el supermercado 1, el costo total de la compra le saldría aproximadamente
+65€. Se encuentra a 3 minutos en tren, que le saldría un costo de 2€, a 10 minutos 
+aproximadamente en coche, con un costo de 3€ la gasolina, y a 15 minutos en bus
+con un costo del billete de 1,2€. El consumidor es socio de 
+este supermercado y le hacen un 10% de descuento en el precio de su compra.
+
+En el supermercado 2, el costo total de la compra saldría de 50€, pero la distancia
+de su domicilio al supermercado es mayor que la anterior y le supondría un gasto de 
+gasolina de 5€ si va en coche, 2,50€ si va en tren y 1,4€ si va en bus.
+
+Y por último, en el supermercado 3, la compra le saldría por un 
+costo total de 70€. La ubicación de dicho supermercado también esta lejos
+de su casa pero tiene la opción de ir en bus que solo le supondría un 
+precio de 1.2€, si va en coche le cuesta un total de 3€ la gasolina, y si decide
+ir en tren le supondria un coste de 2,2€. El consumidor tiene
+el carnet de familia numerosa y en este supermercado le proporciona un descuento
+del 21%.
+
+El objetivo es tomar la decisión de cual es la mejor alternativa 
+teniendo en cuenta cada uno de los factores de cada supermercado.
+
+
+#PROBLEMA 2 (Estefanía Blanco Rodríguez)
+A partir de la siguiente tabla de decisión, aplicar los diferentes métodos de incertidumbre.
+
+source("teoriadecision_funciones_incertidumbre.R")
+
+tabla1EBR=crea.tablaX(c(3, -5, 9,
+                        8,  2, -6,
+                        0, 4,  -8,
+                        7, -2,  3),numalternativas = 4, numestados = 3)
+tabla1EBR
+
