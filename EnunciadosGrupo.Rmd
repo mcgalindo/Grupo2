@@ -26,3 +26,51 @@ Por otro lado, descubrimos una casa en un pueblo de Málaga por el valor de 100�
 
 Decidir cuál es la mejor alternativa según todos los criterios si lo que quiere María es gastarse el menos dinero posible, pero a la vez, pasar una estancia agradable con sus amigos.
 
+
+## PROBLEMA 1  (Julia López Sacramento)
+
+Aplicar los criterios de decisión bajo incertidumbre a el problema cuya matriz 
+de valores numéricos viene dadas en la siguiente tabla:
+```{r echo=FALSE}
+library(knitr)
+TablaJLS = matrix(c(3,2,1,
+  7,-2,5,
+  -1,4,8,
+   4,1,0),ncol = 3,nrow = 4)
+rownames(TablaJLS) = c("d1","d2","d3","d4")
+colnames(TablaJLS) = c("e1","e2","e3")
+kable(TablaJLS) 
+```
+
+
+
+
+
+## PROBLEMA 2  (Julia López Sacramento)
+
+Una chica apasionada por el baile está buscando una academia para mejorar sus 
+habilidades. En su ciudad, hay tres academias de baile populares, cada una con 
+un costo diferente de matrícula y mensualidad. La chica quiere tomar la mejor
+decisión para aprender a bailar sin gastar demasiado dinero.
+
+Academia A: Ofrece clases de alta calidad y tiene una excelente reputación en 
+la comunidad. Sin embargo, el costo de la matrícula es de 50€ y la 
+mensualidad es de 45€ por estilo, pero si se apunta a 2 estilos la matricula 
+le saldría 65€ y en el caso de 3 estilos se regala la matrícula y la 
+mensualidad pasa a ser de 100€
+
+Academia B: Es conocida por tener instructores experimentados y se encuentra a 
+una distancia conveniente de su hogar. La matrícula es de 35€, pero la 
+mensualidad es de 55€, en cambio si escoge 2 estilos el precio de la mensualidad
+solo subiría a 60€. Además si escoge 3 estilos solo paga 10€ de matrícula,
+y la mensualidad sube a 80€
+
+Academia C: Ofrece tarifas muy asequibles con una matrícula de 20€ y una 
+mensualidad de 30€, pero la calidad de enseñanza puede variar y algunos dicen 
+que es irregular. Si elige 2 estilos la mensualidad pasa a ser el doble.
+En caso de 3 estilos la matrícula le saldría 15€ y la 
+mensualidad el triple
+
+Decidir cuál es la mejor alternativa según todos los criterios si la chica 
+quiere aprender a bailar de manera efectiva y minimizar sus gastos. 
+
