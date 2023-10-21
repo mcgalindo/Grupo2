@@ -130,3 +130,173 @@ criterio.Todos(tabla1MCG, alfa = 0.4, favorable = T)
 ```
 
 La alternativa más recomendada es la 3, aunque la 2 tampoco es mala opción.
+
+
+## PROBLEMA 1  (Julia López Sacramento)
+
+Aplicar los criterios de decisión bajo incertidumbre a el problema cuya matriz de 
+valores numéricos vienen dadas en la tabla siguiente:
+```{r echo=FALSE}
+library(knitr)
+TablaJLS = matrix(c(3,2,1,
+  7,-2,5,
+  -1,4,8,
+   4,1,0),ncol = 3,nrow = 4)
+rownames(TablaJLS) = c("d1","d2","d3","d4")
+colnames(TablaJLS) = c("e1","e2","e3")
+kable(TablaJLS)
+```
+
+
+```{r}
+source("teoriadecision_funciones_incertidumbre.R")
+
+tablaJLS1=crea.tablaX(c(3,-2,8,
+                      2,5,4,
+                      1,-1,1,
+                      7,4,0),numalternativas = 4, numestados = 3)
+tablaJLS1
+
+criterio.Wald(tablaJLS1,T)
+criterio.Optimista(tablaJLS1,T)
+m.opt = criterio.Optimista(tablaJLS1,T)
+names(m.opt$AlternativaOptima)
+criterio.Hurwicz(tablaJLS1,alfa = 0.7)
+dibuja.criterio.Hurwicz(tablaJLS1)
+dibuja.criterio.Hurwicz(tablaJLS1,F)
+dibuja.criterio.Hurwicz_Intervalos(tablaJLS1)
+criterio.Savage(tablaJLS1)
+criterio.Laplace(tablaJLS1)
+criterio.PuntoIdeal(tablaJLS1)
+
+criterio.Todos(tablaJLS1, alfa = 0.4, favorable = T)
+
+
+```
+
+La alternativa más recomendada es la 2, aunque el criterio Optimista recomienda la 
+1 y el criterio de Laplace recomienda también la 4.
+
+
+
+## PROBLEMA 2  (Julia López Sacramento)
+
+Una chica apasionada por el baile está buscando una academia para mejorar sus 
+habilidades. En su ciudad, hay tres academias de baile populares, cada una con 
+un costo diferente de matrícula y mensualidad. La chica quiere tomar la mejor
+decisión para aprender a bailar sin gastar demasiado dinero.
+
+Academia A: Ofrece clases de alta calidad y tiene una excelente reputación en 
+la comunidad. Sin embargo, el costo de la matrícula es de 50€ y la 
+mensualidad es de 45€ por estilo, pero si se apunta a 2 estilos la matricula 
+le saldría 65€ y en el caso de 3 estilos se regala la matrícula y la 
+mensualidad pasa a ser de 100€
+
+Academia B: Es conocida por tener instructores experimentados y se encuentra a 
+una distancia conveniente de su hogar. La matrícula es de 35€, pero la 
+mensualidad es de 55€, en cambio si escoge 2 estilos el precio de la mensualidad
+solo subiría a 60€. Además si escoge 3 estilos solo paga 10€ de matrícula,
+y la mensualidad sube a 80€
+
+Academia C: Ofrece tarifas muy asequibles con una matrícula de 20€ y una 
+mensualidad de 30€, pero la calidad de enseñanza puede variar y algunos dicen 
+que es irregular. Si elige 2 estilos la mensualidad pasa a ser el doble.
+En caso de 3 estilos la matrícula le saldría 15€ y la 
+mensualidad el triple
+
+Decidir cuál es la mejor alternativa según todos los criterios si la chica 
+quiere aprender a bailar de manera efectiva y minimizar sus gastos. 
+
+
+-Un decisor  
+
+
+-Modelo de costes (desfavorable)  
+
+
+-Alternativas:  
+
+  · d1= "Academia A"  
+  
+  · d2= "Academia B"  
+  
+  · d3= "Academia C"    
+  
+  
+  
+-Estados de la naturaleza:
+
+  · e1 = "Solo 1 estilo" 
+  
+  · e2 = "2 estilos"  
+  
+  . e3  = "3 estilos"    
+   
+  
+  
+-Matriz de decisión (costos)
+
+```{r}
+source("teoriadecision_funciones_incertidumbre.R")
+
+(m11 = 50 + 45)
+(m12 = 50 + 65)
+(m13 = 100)
+(m21 = 35 + 55)
+(m22 = 35 + 60)
+(m23 = 10 + 80)
+(m31 = 20 + 30)
+(m32 = 20 + 60)
+(m33 = 15 + 90)
+
+tablaJLS2=crea.tablaX(c(m11,m12,m13,m21,m22,m23,m31,m32,m33), numalternativas = 3,numestados = 3)
+
+```
+
+
+Aplicamos los criterios
+
+```{r}
+#Criterio Wald
+
+waldJLS2=criterio.Wald(tablaJLS2,F)#False puesto que se trata de minimizar costes
+waldJLS2
+
+# Criterio Optimista
+
+optimistaJLS2=criterio.Optimista(tablaJLS2,F)
+optimistaJLS2
+
+# Criterio Hurwicz
+
+hurwiczJLS2=criterio.Hurwicz(tablaJLS2, 0.5, F)
+hurwiczJLS2
+
+
+# Criterio Savage
+
+savageJLS2=criterio.Savage(tablaJLS2,F)
+savageJLS2
+
+# Criterio Laplace
+
+laplaceJLS2=criterio.Laplace(tablaJLS2,F)
+laplaceJLS2
+
+# Criterio Punto Ideal
+
+puntoidealJLS2= criterio.PuntoIdeal(tablaJLS2,F)
+puntoidealJLS2
+
+#Todos los criterios
+
+todosJLS2= criterio.Todos(tablaJLS2, alfa=0.5, favorable = F)
+todosJLS2
+
+```
+  
+  
+  
+Según la mayoría de  criterios, la mejor alternativa para la chica es la 3, es 
+decir, la academia C, excepto el criterio de Wald que recomienda la 
+academia B.
