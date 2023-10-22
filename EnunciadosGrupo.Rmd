@@ -115,3 +115,17 @@ tabla1EBR=crea.tablaX(c(3, -5, 9,
                         7, -2,  3),numalternativas = 4, numestados = 3)
 tabla1EBR
 
+#PROBLEMA 1 (Sergio Canto Garcia)
+La federación nacional española de triatlón debe presentar la lista de deportistas convocadas para participar en el campeonato femenino europeo de triatlón.
+
+Debe llevar 5 personas, y hasta ahora ya tiene 4 seleccionadas. Para el último puesto que queda disponible, tiene tres deportistas candidatas, las cuales tienen puntuaciones en cada una de las disciplinas (natación, maratón y ciclismo, calculadas sobre 100). Rocio Martín es una atleta extremeña que en natación tiene una puntuación de 55, en maratón 78 y en ciclismo 81. Clara González, de Barcelona, tiene unas puntuaciones de 66 en natación, 77 en maratón y 74 en ciclismo. Carmen Puerto tiene puntuación de 80 en natación, 62 en maratón y 73 en ciclismo. 
+Decidir qué atleta debe ser seleccionada para la competición.
+
+
+#PROBLEMA 2 (Sergio Canto Garcia)
+Aplicar los criterios de decisión bajo incertidumbre a el problema cuya matriz 
+de valores numéricos viene dadas en la siguiente tabla:
+```{r}
+tablaSCG=crea.tablaX(c(2,5,7,2,-2,9,5,3,4,5,3,1), numalternativas = 3,numestados = 4)
+tablaSCG
+```
