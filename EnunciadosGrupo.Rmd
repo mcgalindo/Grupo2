@@ -26,6 +26,17 @@ Por otro lado, descubrimos una casa en un pueblo de Málaga por el valor de 100�
 
 Decidir cuál es la mejor alternativa según todos los criterios si lo que quiere María es gastarse el menos dinero posible, pero a la vez, pasar una estancia agradable con sus amigos.
 
+# Ejercicio 2 (María Caballos Galindo)
+```{r echo = F}
+source("teoriadecision_funciones_incertidumbre.R")
+
+tabla1MCG=crea.tablaX(c(-6, -6, -2,
+                      0,  3,  4,
+                      8, -5,  9,
+                      4, -7,  0),numalternativas = 4, numestados = 3)
+tabla1MCG
+
+```
 
 ## PROBLEMA 1  (Julia López Sacramento)
 
@@ -105,8 +116,9 @@ teniendo en cuenta cada uno de los factores de cada supermercado.
 
 
 # PROBLEMA 2 (Estefanía Blanco Rodríguez)
-A partir de la siguiente tabla de decisión, aplicar los diferentes métodos de incertidumbre.
+A partir de la siguiente tabla de decisión, aplicar los diferentes métodos de incertidumbre:
 
+```{r echo= F}
 source("teoriadecision_funciones_incertidumbre.R")
 
 tabla1EBR=crea.tablaX(c(3, -5, 9,
@@ -114,6 +126,9 @@ tabla1EBR=crea.tablaX(c(3, -5, 9,
                         0, 4,  -8,
                         7, -2,  3),numalternativas = 4, numestados = 3)
 tabla1EBR
+```
+
+
 
 # PROBLEMA 1 (Sergio Canto Garcia)
 La federación nacional española de triatlón debe presentar la lista de deportistas convocadas para participar en el campeonato femenino europeo de triatlón.
